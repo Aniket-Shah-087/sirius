@@ -1,4 +1,16 @@
-import { clerkMiddleware } from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+
+
+/*
+const isPublicRoute = createRouteMatcher([
+  "/api/inngest(.*)",
+]);
+
+export default clerkMiddleware(async (auth, req) => {
+  if (!isPublicRoute(req)){
+    await auth.protect();
+  }
+});*/     /* This above can be used isntead of the bleow one line-15 if i want to redirect the user directly to the sign in page if the user is not loged in yet */
 
 export default clerkMiddleware();
 
